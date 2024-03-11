@@ -1,0 +1,37 @@
+{
+  "name": "b2014779_chaumakara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChauMakKaRa/backend-contacts.git"
+  },
+  "author": "Kara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChauMakKaRa/backend-contacts/issues"
+  },
+  "homepage": "https://github.com/ChauMakKaRa/backend-contacts#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.22.15",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongodb": "^6.1.0",
+    "mongoose": "^8.0.0",
+    "mongoose-auto-increment": "^5.0.1",
+    "nodemailer": "^6.9.9",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.15",
+    "@babel/core": "^7.22.20",
+    "@babel/node": "^7.22.19",
+    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@babel/preset-env": "^7.22.20"
+  }
+}
