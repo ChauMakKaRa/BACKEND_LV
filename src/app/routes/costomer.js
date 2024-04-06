@@ -23,7 +23,8 @@ const {
     getComments,
     handleLike,
     handleReplyComment,
-    handlePayPal
+    handlePayPal,
+    getSearchTop
     } = require('../controllers/index');
 
 costomerRouter.route('/products').get(getProducts);
@@ -45,4 +46,5 @@ costomerRouter.route('/notification').get(getNotification);
 costomerRouter.route('/paypal').patch(handlePayPal);
 costomerRouter.route('/notification-by-id').get(getNotificationByID);
 costomerRouter.route('/comment-user').get(getComments).post(addComment).patch(handleLike).put(handleReplyComment);
+costomerRouter.route('/search-top').get(getSearchTop);
 module.exports = costomerRouter;

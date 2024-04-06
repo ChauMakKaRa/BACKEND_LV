@@ -84,6 +84,27 @@ const getCartWithIdUser = async(req, res, next) => {
   }
 }
 
+const getSearchTop = async(req, res) => {
+  try {
+    const products = await Product.aggregate([
+      {
+        $addFields: {
+          stockDifference: { $subtract: ["$quantity_in_stock", "$quantity_purchased"] }
+        }
+      },
+      {
+        $sort: { stockDifference: -1 }  
+      },
+      {
+        $limit: 5  
+      }
+    ]);
+    res.json(products);
+  } catch (error) {
+    throw error;
+  }
+}
+
 const getPay = async(req, res, next) => {
   const {user_id} = req.query;
   const user = await User.findOne({id: user_id});
@@ -614,6 +635,7 @@ module.exports = {
     getCartWithIdUser,
     deleteProduct,
     getPay,
+    getSearchTop,
     addAddressWithIdUser,
     getAddressUserById,
     updateAddress,
